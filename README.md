@@ -1,1 +1,1 @@
-# news_app
+# News 24x7
