@@ -1,5 +1,5 @@
 {
-    "name": "News 24x7",
+    "name": "news_app",
     "short_name": "news_app",
     "start_url": ".",
     "display": "standalone",
