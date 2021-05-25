@@ -1,10 +1,9 @@
-name: gh-pages
+name: CI/CD
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   build:
@@ -12,4 +11,31 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v1
-      - uses: erickzanardo/flutter-gh-pages@v3
+      - run: |
+          flutter doctor
+          flutter pub get
+          flutter format .
+          flutter analyze
+          flutter test
+          flutter build web
+      - run: |
+          git init
+          git config user.email joshijeevan98@gmail.com
+          git config user.name G1Joshi
+          git checkout -b gh-pages
+          git push origin gh-pages -f
+          echo "<!DOCTYPE html>
+          <html lang="en">
+
+          <head>
+            <link rel="icon" type="image/png" href="favicon.png" />
+          </head>
+
+          <body>
+            <script src="main.dart.js" type="application/javascript"></script>
+          </body>
+
+          </html>" > build/web/index.html
+          git add build/web/ -f
+          git commit -m "update app"
+          git push origin `git subtree split --prefix=build/web/`:gh-pages -f
