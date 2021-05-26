@@ -8,33 +8,26 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'News 24x7',
-          style: TextStyle(
-            color: Color(0xff708090),
-            fontWeight: FontWeight.bold,
-          ),
+          style: Theme.of(context).textTheme.headline5,
         ),
         centerTitle: true,
         elevation: 0,
       ),
-      body: ListView.builder(
+      body: ListView.separated(
         shrinkWrap: true,
         physics: ClampingScrollPhysics(),
         itemCount: Countries.countries.length,
+        separatorBuilder: (context, index) => Divider(),
         itemBuilder: (context, index) => ListTile(
           leading: Icon(
             Icons.flag,
-            color: Color(0xff778899),
           ),
           title: Text(
             Countries.countries[index].name,
-            style: TextStyle(
-              color: Color(0xff778899),
-              fontWeight: FontWeight.bold,
-            ),
+            style: Theme.of(context).textTheme.headline6,
           ),
           trailing: Icon(
             Icons.double_arrow_rounded,
-            color: Color(0xff778899),
           ),
         ),
       ),
