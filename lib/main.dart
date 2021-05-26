@@ -10,19 +10,49 @@ class NewsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'News 24x7',
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
       theme: ThemeData(
         brightness: Brightness.light,
+        primarySwatch: Colors.blueGrey,
         scaffoldBackgroundColor: Color(0xffddeeff),
         appBarTheme: AppBarTheme(
           backgroundColor: Color(0xffd0e0f0),
         ),
+        iconTheme: IconThemeData(
+          color: Color(0xff667788),
+          size: 30,
+        ),
+        textTheme: TextTheme(
+          headline6: TextStyle(
+            color: Color(0xff667788),
+            fontWeight: FontWeight.bold,
+          ),
+          headline5: TextStyle(
+            color: Color(0xff708090),
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
+        primarySwatch: Colors.blueGrey,
         scaffoldBackgroundColor: Color(0xff102030),
         appBarTheme: AppBarTheme(
           backgroundColor: Color(0xff112233),
+        ),
+        iconTheme: IconThemeData(
+          color: Color(0xffaabbcc),
+          size: 30,
+        ),
+        textTheme: TextTheme(
+          headline6: TextStyle(
+            color: Color(0xffaabbcc),
+            fontWeight: FontWeight.bold,
+          ),
+          headline5: TextStyle(
+            color: Color(0xffa0b0c0),
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
       home: HomePage(),
