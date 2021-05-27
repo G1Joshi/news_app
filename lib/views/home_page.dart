@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/components/countries.dart';
+import 'package:news_app/views/news_page.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -19,6 +20,13 @@ class HomePage extends StatelessWidget {
         itemCount: Countries.countries.length,
         separatorBuilder: (context, index) => Divider(),
         itemBuilder: (context, index) => ListTile(
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) =>
+                  NewsPage(country: Countries.countries[index].code),
+            ),
+          ),
           leading: Icon(
             Icons.flag,
           ),
