@@ -20,13 +20,15 @@ class HomePage extends StatelessWidget {
         itemCount: Countries.countries.length,
         separatorBuilder: (context, index) => Divider(),
         itemBuilder: (context, index) => ListTile(
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) =>
-                  NewsPage(country: Countries.countries[index].code),
-            ),
-          ),
+          onTap: () => Future.delayed(Duration.zero, () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    NewsPage(country: Countries.countries[index].code),
+              ),
+            );
+          }),
           leading: Icon(
             Icons.flag,
           ),
