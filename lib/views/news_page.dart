@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:news_app/models/article_model.dart';
 import 'package:news_app/models/news_model.dart';
 import 'package:news_app/services/news_api.dart';
+import 'package:news_app/views/article_page.dart';
 
 class NewsPage extends StatefulWidget {
   NewsPage({required this.country});
@@ -40,9 +41,18 @@ class _NewsState extends State<NewsPage> {
             List<Article> data = snapshot.data!.articles;
             return ListView.separated(
               shrinkWrap: true,
+              physics: ClampingScrollPhysics(),
               itemCount: data.length,
               separatorBuilder: (context, index) => Divider(),
               itemBuilder: (context, index) => ListTile(
+                onTap: () => Future.delayed(Duration.zero, () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ArticlePage(data: data[index]),
+                    ),
+                  );
+                }),
                 leading: Image.network(
                   data[index].urlToImage,
                   height: 24,
