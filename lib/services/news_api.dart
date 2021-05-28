@@ -9,7 +9,7 @@ class NewsAPI {
     late Response response;
     try {
       response = await get(
-        Uri.parse("http://newsapi.org/v2/top-headlines?country=$country"),
+        Uri.parse("https://newsapi.org/v2/top-headlines?country=$country"),
         headers: {
           HttpHeaders.authorizationHeader: '${API.key}',
         },
