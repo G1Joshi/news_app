@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:news_app/models/article_model.dart';
 import 'package:news_app/models/news_model.dart';
 import 'package:news_app/services/news_api.dart';
-import 'package:news_app/views/article_page.dart';
+import 'package:news_app/views/news_tile.dart';
 
 class NewsPage extends StatefulWidget {
   NewsPage({required this.country});
@@ -39,35 +39,12 @@ class _NewsState extends State<NewsPage> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             List<Article> data = snapshot.data!.articles;
-            return ListView.separated(
+            return ListView.builder(
               shrinkWrap: true,
               physics: ClampingScrollPhysics(),
               itemCount: data.length,
-              separatorBuilder: (context, index) => Divider(),
-              itemBuilder: (context, index) => ListTile(
-                onTap: () => Future.delayed(Duration.zero, () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ArticlePage(data: data[index]),
-                    ),
-                  );
-                }),
-                leading: Image.network(
-                  data[index].urlToImage,
-                  height: 24,
-                  width: 24,
-                  fit: BoxFit.cover,
-                  loadingBuilder: (context, child, loadingProgress) =>
-                      loadingProgress == null
-                          ? child
-                          : CircularProgressIndicator(),
-                  errorBuilder: (context, exception, stackTrace) =>
-                      Icon(Icons.image),
-                ),
-                title: Text(data[index].title),
-                subtitle: Text(data[index].author),
-                trailing: Text(data[index].source.name),
+              itemBuilder: (context, index) => NewsTile(
+                data: data[index],
               ),
             );
           }
