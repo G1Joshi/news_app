@@ -10,7 +10,7 @@ class NewsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'News 24x7',
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.system,
       theme: ThemeData(
         brightness: Brightness.light,
         primarySwatch: Colors.blueGrey,
