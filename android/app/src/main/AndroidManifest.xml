@@ -1,8 +1,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.news_app">
    <uses-permission android:name="android.permission.INTERNET" />
+   <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+   </queries>
    <application
-        android:label="News 24x7"
+        android:label="News App"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
