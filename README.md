@@ -1,1 +1,1 @@
-# News 24x7
+# News App
