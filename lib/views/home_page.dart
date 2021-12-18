@@ -1,46 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/components/countries.dart';
-import 'package:news_app/views/news_page.dart';
+import 'package:news_app/views/components/country_list.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'News 24x7',
-          style: Theme.of(context).textTheme.headline5,
+        title: const Text(
+          'Choose your location',
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
         ),
-        centerTitle: true,
         elevation: 0,
+        centerTitle: true,
       ),
-      body: ListView.separated(
-        shrinkWrap: true,
-        physics: ClampingScrollPhysics(),
-        itemCount: Countries.countries.length,
-        separatorBuilder: (context, index) => Divider(),
-        itemBuilder: (context, index) => ListTile(
-          onTap: () => Future.delayed(Duration.zero, () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) =>
-                    NewsPage(country: Countries.countries[index].code),
-              ),
-            );
-          }),
-          leading: Icon(
-            Icons.flag,
-          ),
-          title: Text(
-            Countries.countries[index].name,
-            style: Theme.of(context).textTheme.headline6,
-          ),
-          trailing: Icon(
-            Icons.double_arrow_rounded,
-          ),
-        ),
-      ),
+      body: const CountryList(),
     );
   }
 }
