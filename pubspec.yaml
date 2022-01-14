@@ -14,8 +14,7 @@ dependencies:
 
   cached_network_image: ^3.2.0
   cupertino_icons: ^1.0.4
-  equatable: ^2.0.3
-  flutter_bloc: ^8.0.0
+  get: ^4.6.1
   http: ^0.13.4
   intl: ^0.17.0
   multi_select_flutter: ^4.0.0

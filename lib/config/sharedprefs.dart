@@ -12,7 +12,7 @@ class Preferences {
   }
 
   static String getCountry() {
-    return preference.getString("country") ?? "India";
+    return preference.getString("country") ?? "";
   }
 
   static Future setCountryCode(String countryCode) async {
@@ -20,7 +20,7 @@ class Preferences {
   }
 
   static String getCountryCode() {
-    return preference.getString("countryCode") ?? "in";
+    return preference.getString("countryCode") ?? "";
   }
 
   static Future setSortBy(String sortBy) async {
