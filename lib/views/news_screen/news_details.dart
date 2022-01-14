@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:news_app/config/constants.dart';
-import 'package:news_app/data/models/article_model.dart';
+import 'package:news_app/models/article_model.dart';
 import 'package:url_launcher/link.dart';
 
 class NewsDetails extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/config/constants.dart';
-import 'package:news_app/data/models/article_model.dart';
+import 'package:news_app/models/article_model.dart';
 import 'package:news_app/views/news_screen/news_details.dart';
 
 class NewsTile extends StatelessWidget {
