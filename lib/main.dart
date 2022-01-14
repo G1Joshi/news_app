@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:news_app/config/sharedprefs.dart';
 import 'package:news_app/config/constants.dart';
 import 'package:news_app/views/loading.dart';
@@ -15,7 +16,7 @@ class NewsApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'News App',
       theme: ThemeData(
