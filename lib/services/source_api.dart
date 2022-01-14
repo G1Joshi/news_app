@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:http/http.dart';
 import 'package:news_app/config/secrets.dart';
 import 'package:news_app/config/sharedprefs.dart';
-import 'package:news_app/data/models/source_model.dart';
+import 'package:news_app/models/source_model.dart';
 
 class SourcesAPI {
   Future<Sources> getSources() async {
