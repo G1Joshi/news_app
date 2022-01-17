@@ -22,12 +22,4 @@ class Preferences {
   static String getCountryCode() {
     return preference.getString("countryCode") ?? "";
   }
-
-  static Future setSortBy(String sortBy) async {
-    await preference.setString("sortBy", sortBy);
-  }
-
-  static String getSortBy() {
-    return preference.getString("sortBy") ?? "publishedAt";
-  }
 }
