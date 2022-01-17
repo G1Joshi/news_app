@@ -11,7 +11,7 @@ class CountryController extends GetxController {
   }
 
   void getStatus() {
-    if (Preferences.getCountry().isNotEmpty) {
+    if (Preferences.getCountryCode().isNotEmpty) {
       countrySet(true);
     }
   }
