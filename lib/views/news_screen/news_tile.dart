@@ -52,6 +52,7 @@ class NewsTile extends StatelessWidget {
                         style: const TextStyle(
                           fontSize: 17,
                           fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.italic,
                         ),
                       ),
                       const SizedBox(height: 5),

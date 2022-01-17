@@ -16,6 +16,7 @@ class SourcesController extends GetxController {
   }
 
   Future getSources() async {
+    sourcesStatus(SourcesStatus.loading);
     sources = await api.getSources();
     sourcesStatus(SourcesStatus.loaded);
   }

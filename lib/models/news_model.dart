@@ -11,7 +11,7 @@ class News {
   final String status;
   final String message;
   final int totalResults;
-  final List<Article> articles;
+  List<Article> articles;
 
   factory News.fromJson(Map<String, dynamic> json) {
     return News(
