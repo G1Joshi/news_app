@@ -1,9 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:news_app/config/constants.dart';
 import 'package:news_app/models/article_model.dart';
-import 'package:url_launcher/link.dart';
+import 'package:news_app/views/news_screen/news_webview.dart';
 
 class NewsDetails extends StatelessWidget {
   const NewsDetails({Key? key, required this.data}) : super(key: key);
@@ -117,28 +118,25 @@ class NewsDetails extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 10),
-                    Link(
-                      uri: Uri.parse(data.url),
-                      target: LinkTarget.self,
-                      builder: (context, link) => InkWell(
-                        onTap: link,
-                        child: Row(
-                          children: const [
-                            Text(
-                              'See full story',
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                color: primaryColorLight,
-                              ),
-                            ),
-                            Icon(
-                              Icons.chevron_right,
+                    InkWell(
+                      onTap: () => Get.to(() =>
+                          NewsWebview(source: data.source.name, url: data.url)),
+                      child: Row(
+                        children: const [
+                          Text(
+                            'See full story',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
                               color: primaryColorLight,
-                              size: 30,
-                            )
-                          ],
-                        ),
+                            ),
+                          ),
+                          Icon(
+                            Icons.chevron_right,
+                            color: primaryColorLight,
+                            size: 30,
+                          )
+                        ],
                       ),
                     ),
                   ],

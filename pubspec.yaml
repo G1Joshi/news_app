@@ -19,7 +19,7 @@ dependencies:
   intl: ^0.17.0
   multi_select_flutter: ^4.0.0
   shared_preferences: ^2.0.11
-  url_launcher: ^6.0.17
+  webview_flutter: ^3.0.0
 
 dev_dependencies:
   flutter_test:
