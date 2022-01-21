@@ -1,38 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:get/get.dart';
-import 'package:news_app/config/sharedprefs.dart';
-import 'package:news_app/config/constants.dart';
-import 'package:news_app/views/loading.dart';
 
-Future<void> main() async {
+import 'package:get_storage/get_storage.dart';
+
+import 'app/app.dart';
+
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Preferences.init();
+  await GetStorage.init();
   runApp(const NewsApp());
-}
-
-class NewsApp extends StatelessWidget {
-  const NewsApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'News App',
-      theme: ThemeData(
-        fontFamily: 'Helvetica',
-        scaffoldBackgroundColor: secondaryColorLight,
-        appBarTheme: const AppBarTheme(
-          backgroundColor: primaryColorLight,
-          foregroundColor: secondaryColorLight,
-          systemOverlayStyle: SystemUiOverlayStyle.light,
-        ),
-        colorScheme: ColorScheme.fromSwatch().copyWith(
-          primary: primaryColorDark,
-          secondary: primaryColorLight,
-        ),
-      ),
-      home: const Loading(),
-    );
-  }
 }
