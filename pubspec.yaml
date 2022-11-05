@@ -1,23 +1,26 @@
 name: news_app
 description: News App
 
-publish_to: none
+publish_to: "none"
+
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.15.1 <3.0.0"
+  sdk: ">=2.16.2 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
   cached_network_image: ^3.2.0
-  dio: ^4.0.4
-  get: ^4.6.1
-  get_storage: ^2.0.3
+  cupertino_icons: ^1.0.4
+  equatable: ^2.0.3
+  flutter_bloc: ^8.0.1
+  http: ^0.13.4
   intl: ^0.17.0
-  multi_select_flutter: ^4.0.0
-  webview_flutter: ^3.0.0
+  multi_select_flutter: ^4.1.2
+  shared_preferences: ^2.0.15
+  webview_flutter: ^3.0.4
 
 dev_dependencies:
   flutter_test:
@@ -27,9 +30,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
-  assets:
-    - assets/
 
   fonts:
     - family: Helvetica
