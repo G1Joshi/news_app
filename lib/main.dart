@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'package:get_storage/get_storage.dart';
+import 'package:news_app/screens/app/app.dart';
+import 'package:news_app/utils/storage.dart';
 
-import 'app/app.dart';
-
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await GetStorage.init();
+  await Storage.init();
   runApp(const NewsApp());
 }
